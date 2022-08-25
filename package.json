@@ -6,11 +6,11 @@
     "lint": "eslint -c .eslintrc.json --ext .js,.js.es6 ."
   },
   "dependencies": {
-    "@fullcalendar/core": "^5.10.1",
-    "@fullcalendar/daygrid": "^5.10.1",
-    "@fullcalendar/interaction": "^5.10.1",
-    "@fullcalendar/list": "^5.10.1",
-    "@fullcalendar/timegrid": "^5.10.1",
+    "@fullcalendar/core": "^5.11.3",
+    "@fullcalendar/daygrid": "^5.11.3",
+    "@fullcalendar/interaction": "^5.11.3",
+    "@fullcalendar/list": "^5.11.3",
+    "@fullcalendar/timegrid": "^5.11.3",
     "gantt": "^3.1.1",
     "tippy.js": "^6.3.5"
   },
