@@ -4,11 +4,10 @@
   <div class="row columns">
     <div class="calendar-filters button-group">
       <% @resources.each do |resource| %>
-        <button class="button tiny cal-filter <%= resource %>" id="<%= resource %>">
+        <span style="pointer-events: none; cursor: default;" class="button tiny cal-filter <%= resource %>" id="<%= resource %>">
           <%= I18n.t(resource, scope: "decidim.event_calendar.index.filters") %>
-        </button>
+        </span>
       <% end %>
-      <select id="locale-selector" class="large-1"></select>
     </div>
 
     <div id="calendar"></div>

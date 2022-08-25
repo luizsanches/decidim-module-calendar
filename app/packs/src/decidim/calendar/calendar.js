@@ -8,6 +8,8 @@ import tippy from 'tippy.js';
 import 'tippy.js/dist/tippy.css';
 import 'tippy.js/themes/translucent.css';
 
+var locale = document.documentElement.lang.toLowerCase();
+
 document.addEventListener('DOMContentLoaded', function() {
   collect_events();
 });
@@ -24,8 +26,6 @@ function collect_events() {
 }
 
 function render_calendar(events) {
-  var initialLocaleCode = 'pt-br';
-  var localeSelectorEl = document.getElementById('locale-selector');
   var calendarEl = document.getElementById('calendar');
 
   var calendar = new Calendar(calendarEl, {
@@ -37,7 +37,7 @@ function render_calendar(events) {
     },
     initialView: "dayGridMonth",
     locales: allLocales,
-    locale: initialLocaleCode,
+    locale: locale,
     navLinks: true, // can click day/week names to navigate views
     dayMaxEvents: true, // allow "more" link when too many events
     eventTimeFormat: {
@@ -69,20 +69,4 @@ function render_calendar(events) {
   });
 
   calendar.render();
-
-  // build the locale selector's options
-  calendar.getAvailableLocaleCodes().forEach(function(localeCode) {
-    var optionEl = document.createElement('option');
-    optionEl.value = localeCode;
-    optionEl.selected = localeCode == initialLocaleCode;
-    optionEl.innerText = localeCode;
-    localeSelectorEl.appendChild(optionEl);
-  });
-
-  // when the selected option changes, dynamically change the calendar option
-  localeSelectorEl.addEventListener('change', function() {
-    if (this.value) {
-      calendar.setOption('locale', this.value);
-    }
-  });
 }
