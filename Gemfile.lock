@@ -1,9 +1,9 @@
 PATH
   remote: .
   specs:
-    decidim-calendar (0.21.0)
-      decidim-admin (>= 0.25.0)
-      decidim-core (>= 0.25.0)
+    decidim-calendar (0.22.0)
+      decidim-admin (>= 0.26.0)
+      decidim-core (>= 0.26.0)
 
 GEM
   remote: https://rubygems.org/
