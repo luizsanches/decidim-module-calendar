@@ -41,5 +41,9 @@ module Decidim
     def self.table_name
       "calendars"
     end
+
+    def self.moderators(organization)
+      Decidim::ParticipatoryProcesses::Admin::Moderators.for_organization(organization)
+    end
   end
 end
