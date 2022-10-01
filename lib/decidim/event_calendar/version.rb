@@ -3,10 +3,10 @@
 module Decidim
   # Holds decidim-calendar version
   module EventCalendar
-    DECIDIM_VERSION = ">= 0.26.0"
+    DECIDIM_VERSION = ">= 0.27.0"
 
     def self.version
-      "0.22.0"
+      "0.23.0"
     end
   end
 end

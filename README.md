@@ -57,7 +57,7 @@ docker-compose up -d
 
 export DATABASE_USERNAME=postgres
 
-rake development_app
+bundle exec rake development_app
 ```
 
 ## Testing
@@ -69,8 +69,8 @@ Dependencies:
 Run the commands:
 
 ```bash
-rake test_app
-rake spec
+bundle exec rake test_app
+bundle exec rake spec
 ```
 
 ## Localization

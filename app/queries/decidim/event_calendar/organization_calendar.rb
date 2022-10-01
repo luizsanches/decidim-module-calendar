@@ -2,7 +2,7 @@
 
 module Decidim
   module EventCalendar
-    class OrganizationCalendar < Rectify::Query
+    class OrganizationCalendar < Decidim::Query
       def initialize(organization)
         @organization = organization
       end
