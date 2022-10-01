@@ -1,0 +1,49 @@
+cs:
+  decidim:
+    calendar:
+      admin:
+        actions:
+          new_external_event: Nová externí událost
+        external_events:
+          index:
+            title: Externí události
+            no_records_html: <p>Nebyly vytvořeny žádné externí události.</p> <p>Začněte přidáním externí události tlačítkem "<a href="%{new_set_link}">%{button_name}</a>.</p>
+          create:
+            invalid: Neplatná externí událost
+            success: Externí událost byla úspěšně vytvořena
+          destroy:
+            success: Externí událost byla úspěšně odstraněna
+          edit:
+            save: Uložit externí událost
+          form:
+            title: Externí událost
+          new:
+            title: Nová externí událost
+            create: Vytvořit externí událost
+          update:
+            invalid: Chyba při aktualizaci externí události
+            success: Externí událost byla úspěšně aktualizována
+        models:
+          external_events:
+            fields:
+              title: Název
+              start_at: Začátek v
+              end_at: Konec v
+              url: URL
+      index:
+        title: Globální kalendář
+        filters:
+          consultation: Konzultace
+          debate: Debaty
+          external_event: Externí události
+          meeting: Schůzky
+          participatory_step: Účastnický proces
+      menu:
+        calendar: Kalendář
+        gantt: Ganttův graf
+        ical: Stáhnout iCAL
+  activerecord:
+    models:
+      decidim/calendar:
+        one: Kalendář
+        other: Kalendáře
