@@ -22,7 +22,7 @@ calendar view form.
 Edit the Gemfile and add this lines:
 
 ```ruby
-gem "decidim-calendar", git: "https://github.com/luizsanches/decidim-module-calendar"
+gem "decidim-calendar", git: "[REPO-URL]/decidim-module-calendar"
 ```
 
 Run this rake tasks:
@@ -53,9 +53,10 @@ Clone this repository or fork and run:
 ```bash
 bundle install
 
-docker-compose up -d
+docker compose up -d
 
 export DATABASE_USERNAME=postgres
+export DATABASE_PASSWORD=postgres
 
 bundle exec rake development_app
 ```
