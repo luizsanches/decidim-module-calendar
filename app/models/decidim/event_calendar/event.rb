@@ -4,9 +4,13 @@ module Decidim
   module EventCalendar
     module Event
       @models = [
-        Decidim::Meetings::Meeting.includes(component: :participatory_space),
-        Decidim::ParticipatoryProcessStep,
-        Decidim::Debates::Debate.includes(component: :participatory_space),
+        Decidim::Meetings::Meeting.joins(:component)
+                                  .where.not('decidim_components.published_at': nil)
+                                  .published.where(private_meeting: false),
+        Decidim::ParticipatoryProcessStep.joins(:participatory_process)
+                                         .where.not('decidim_participatory_processes.published_at': nil),
+        Decidim::Debates::Debate.joins(:component)
+                                .where.not('decidim_components.published_at': nil),
         Decidim::EventCalendar::ExternalEvent
       ]
 

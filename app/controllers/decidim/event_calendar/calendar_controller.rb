@@ -21,7 +21,9 @@ module Decidim
       def gantt; end
 
       def gantt_tasks
-        events = Decidim::ParticipatoryProcessStep.where.not(start_date: nil)
+        events = Decidim::ParticipatoryProcessStep.joins(:participatory_process)
+                                                  .where.not('decidim_participatory_processes.published_at': nil)
+                                                  .where.not(start_date: nil)
                                                   .order(decidim_participatory_process_id: :asc, position: :asc, start_date: :asc)
                                                   .map do |step|
           if step.organization == current_organization
