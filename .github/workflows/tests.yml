@@ -19,7 +19,7 @@ jobs:
     timeout-minutes: 30
     services:
       postgres:
-        image: postgres:11
+        image: postgres:14
         ports: ["5432:5432"]
         options: >-
           --health-cmd pg_isready
@@ -75,6 +75,7 @@ jobs:
         name: Precompile assets
         working-directory: ./spec/decidim_dummy_app/
 
+      - uses: mfinelli/setup-imagemagick@v6
       - run: bundle exec rspec
         name: RSpec
         env:
