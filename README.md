@@ -150,13 +150,6 @@ Clone this repository or fork and run:
 ```bash
 bundle install
 
-yarn install
-
-docker compose up -d
-
-export DATABASE_USERNAME=postgres
-export DATABASE_PASSWORD=postgres
-
 bundle exec rake development_app
 ```
 
